@@ -9,7 +9,8 @@
 using namespace std;
 
 void readingData(){
-	int lines=1,r=1,v=1,t=1,o,i=1;
+	int lines=1,r=1,v=1,t=1,i=1;
+	char o;
 	ifstream roomdata ("roomdata.txt");
 	roomdata >> lines;
 
@@ -18,7 +19,7 @@ void readingData(){
 	int *time = new int[lines];
 	char *IO = new char[lines]; 
 
-	do
+	while(roomdata>>r>>v>>o>>t)
 		{
 			room[i] = r;
 			visitor[i] = v;
@@ -26,7 +27,7 @@ void readingData(){
 			time[i] = t;
 			cout << "test";
 			i++;
-		}while((roomdata>>r>>v>>o>>t));
+		}
 }
 
 int _tmain(int argc, _TCHAR* argv[])
